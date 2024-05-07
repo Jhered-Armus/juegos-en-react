@@ -1,0 +1,170 @@
+#app {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .card {
+    padding: 2em;
+  }
+  
+  .read-the-docs {
+    color: #888;
+  }
+  
+  .tablero{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .espacio{
+    font-size: 3em;
+  }
+  .tableroBotones{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, .1fr);
+    gap:10px;
+    justify-content: center;
+  }
+  .ponins-hangaman{
+    /* border: 1px solid; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .ponints{
+    border: 2px solid white;
+    padding: 0 20px;
+    font-size:1em ;
+    height: 50%;
+    height: 30vh;
+    margin-top: 20px;
+  }
+  .ponints h2{
+    font-size: 1em;
+  }
+  
+  .hangman {
+    position: relative;
+    width: 100px;
+    height: 200px;
+    flex: 0 0 auto; /* Evita que la segunda columna crezca o se encoja, y utiliza su tamaño natural */
+    margin-right:45%;
+  }
+  
+  .pole-1 {
+    position: absolute;
+    top: 0;
+    left: 1%;
+    width: 5px;
+    height: 100%;
+    background-color: black;
+    transform: translateX(-50%);
+  }
+  .pole-2 {
+    position: absolute;
+    top: 0;
+    left: 1%;
+    width: 60px;
+    height: 2%;
+    background-color: black;
+   
+  }
+  .pole-3 {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    width: 5px;
+    height: 20%;
+    background-color: brown;
+    transform: translateX(-50%);
+  }
+  
+  .head {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0ad4e;
+    transform: translateX(-50%);
+  }
+  
+  .torso {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    width: 10px;
+    height: 60px;
+    background-color: #f0ad4e;
+    transform: translateX(-50%);
+  }
+  
+  .left-arm,
+  .right-arm,
+  .left-leg,
+  .right-leg {
+    position: absolute;
+    background-color: #f0ad4e;
+  }
+  
+  .left-arm,
+  .right-arm {
+    width: 30px;
+    height: 10px;
+  }
+  
+  .left-arm {
+    top: 70px;
+    left: 20px;
+    transform: rotate(45deg);
+  }
+  
+  .right-arm {
+    top: 70px;
+    left: 50px;
+    transform: rotate(-45deg);
+  }
+  
+  .left-leg,
+  .right-leg {
+    width: 10px;
+    height: 40px;
+  }
+  
+  .left-leg {
+    top: 110px;
+    left: 30px;
+    transform: rotate(45deg);
+  }
+  
+  .right-leg {
+    top: 110px;
+    left: 60px;
+    transform: rotate(-45deg);
+  }
+  
+  .cnGameOver{
+    position: absolute; /* Importante: Establece la posición absoluta en el elemento */
+    top: 50%; /* Lo coloca en el 50% de la altura del contenedor */
+    left: 50%; /* Lo coloca en el 50% del ancho del contenedor */
+    transform: translate(-50%, -50%); /* Centra el elemento respecto a su propio tamaño */
+    background-color: rgba(36, 36, 36, 0.679);
+    border: 2px solid;
+    width: 45%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cnGameOver button{
+    margin: 20px;
+    font-size: 1em;
+    height: 40px;
+  }
+  

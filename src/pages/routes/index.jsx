@@ -1,13 +1,13 @@
 import { Routes, BrowserRouter, Route } from 'react-router-dom'
 import { TicTacToe } from '../Game-TicTacToe'
-import { GameHorcado } from '../Game-Horcado'
+import { GameAhorcado } from '../GameAhorcado'
 
 export function RoutePage () {
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<TicTacToe />} />
-        <Route path='/Game-horcado' element={<GameHorcado />} />
+        <Route path='/Game-horcado' element={<GameAhorcado />} />
       </Routes>
     </BrowserRouter>
   )

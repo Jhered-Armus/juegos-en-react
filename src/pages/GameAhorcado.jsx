@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { BoardAhorcado } from '../component/game_horcado/GameBoard'
+import { BoardAhorcado } from '../components/game_horcado/GameBoard'
 import { comprobacionDeTexto } from '../utils/fcWinRest'
-import '../styles/game.css'
+import '../styles/game_ahorcado.css'
 
 export function GameAhorcado () {
   const [errores, setError] = useState(0)
