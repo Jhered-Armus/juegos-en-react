@@ -1,15 +1,50 @@
 :root {
+  --primary-color: #242424;
+  --secondary-color:#3D3D3D;
+  --three-color:#F6F6F6;
+
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
   
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
-  
+    background-color:var(--secondary-color);
+
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   
+  .side-bar{
+    background-color: #3D3D3D;
+    border: solid white;
+    min-height: 60px;
+    margin-bottom: 20px;
+  }
+  .side-bar ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+  }  
+  .side-bar a{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+    text-decoration: none;
+    border: 3px solid;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    &:hover{
+      background-color: var(--three-color);
+      color: var(--secondary-color);
+    }
+  }

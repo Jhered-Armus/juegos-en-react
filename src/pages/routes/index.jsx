@@ -7,7 +7,7 @@ export function RoutePage () {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<TicTacToe />} />
-        <Route path='/Game-horcado' element={<GameAhorcado />} />
+        <Route path='/game-horcado' element={<GameAhorcado />} />
       </Routes>
     </BrowserRouter>
   )

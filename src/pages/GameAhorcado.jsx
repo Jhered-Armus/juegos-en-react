@@ -12,7 +12,7 @@ export function GameAhorcado () {
   return (
     <main>
       <section>
-        <h1>Juego del Ahorcado</h1>
+        <h1 className='title'>Juego del Ahorcado</h1>
         <div className='ponins-hangaman'>
           <div className='ponints'>
             <h1>Limite de errores 6</h1>
