@@ -1,0 +1,25 @@
+:root {
+  --primary-color: #242424;
+  --secondary-color: #3D3D3D;
+  --three-color: #F6F6F6;
+}
+
+body {
+  margin: 0;
+  background: #ecfdff
+}
+
+.custom-carousel .carousel-indicators {
+  position: absolute;
+  bottom: 1px; /* Ajusta esta posición según sea necesario */
+  left: 30%;
+  transform: translateX(-50%);
+}
+
+.carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(14, 14, 14, 0.496); /* Cambia esto al color deseado */
+    width: 30px;
+    height: 30px;
+  }
+
