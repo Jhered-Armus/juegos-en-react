@@ -73,64 +73,62 @@ export function GameMemorize () {
     if (boardSize === 32) setTime(40)
   }
   return (
-    <main>
-      <Container>
-        <h1 style={{ textAlign: 'center' }}>Memorize</h1>
-        <Row>
-          <Container className='d-flex row-2 gap-1 justify-content-center flex-wrap'>
-            <Col md={8}>
-              {play
-                ? (<GridMemorize
-                    cards={cards} setScore={setScore}
-                    score={score} setTime={setTime}
-                    time={time} pause={pause}
-                   />)
-                : null}
-            </Col>
-            <Col className='d-flex justify-content-center'>
-              <Card className='text-center' style={{ width: '18rem', maxHeight: '280PX' }}>
+    <Container className='flex-grow-1'>
+      <h1 style={{ textAlign: 'center' }}>Memorize</h1>
+      <Row>
+        <Container className='d-flex row-2 gap-1 justify-content-center flex-wrap'>
+          <Col md={8}>
+            {play
+              ? (<GridMemorize
+                  cards={cards} setScore={setScore}
+                  score={score} setTime={setTime}
+                  time={time} pause={pause}
+                 />)
+              : null}
+          </Col>
+          <Col className='d-flex justify-content-center'>
+            <Card className='text-center' style={{ width: '18rem', maxHeight: '280PX' }}>
+              <Card.Body>
+                <Card.Title>Memorize</Card.Title>
                 <Card.Body>
-                  <Card.Title>Memorize</Card.Title>
-                  <Card.Body>
-                    {play
-                      ? (
-                        <div className=' d-flex row-2 gap-1 justify-content-center'>
-                          <CustomButton
-                            onClick={handlerPause}
-                            icon={pause ? imgButton.pause : imgButton.play}
-                            variant='secondary'
-                          >
-                            {pause ? 'Continuar' : 'Pausar'}
-                          </CustomButton>
-                          <Button onClick={() => reshuffle(8)} variant='secondary'>
-                            Volver a barajar
-                          </Button>
-                        </div>
-                        )
-                      : (
-                        <Button onClick={() => setPlay(true)} variant='secondary'>
-                          Empezar
+                  {play
+                    ? (
+                      <div className=' d-flex row-2 gap-1 justify-content-center'>
+                        <CustomButton
+                          onClick={handlerPause}
+                          icon={pause ? imgButton.pause : imgButton.play}
+                          variant='secondary'
+                        >
+                          {pause ? 'Continuar' : 'Pausar'}
+                        </CustomButton>
+                        <Button onClick={() => reshuffle(8)} variant='secondary'>
+                          Volver a barajar
                         </Button>
+                      </div>
+                      )
+                    : (
+                      <Button onClick={() => setPlay(true)} variant='secondary'>
+                        Empezar
+                      </Button>
 
-                        )}
-                  </Card.Body>
-                  {play && (
-                    <>
-                      <ButtonGroup>
-                        <CustomButton onClick={() => handleBoarSize(8, 15)}>8 Cards</CustomButton>
-                        <CustomButton onClick={() => handleBoarSize(16, 30)}>16 Cards</CustomButton>
-                        <CustomButton onClick={() => handleBoarSize(32, 40)}>32 Cards</CustomButton>
-                      </ButtonGroup>
-                      <Card.Text>Score: {score}</Card.Text>
-                      <Card.Text>Tiempo: {time}</Card.Text>
-                    </>
-                  )}
+                      )}
                 </Card.Body>
-              </Card>
-            </Col>
-          </Container>
-        </Row>
-      </Container>
-    </main>
+                {play && (
+                  <>
+                    <ButtonGroup>
+                      <CustomButton onClick={() => handleBoarSize(8, 15)}>8 Cards</CustomButton>
+                      <CustomButton onClick={() => handleBoarSize(16, 30)}>16 Cards</CustomButton>
+                      <CustomButton onClick={() => handleBoarSize(32, 40)}>32 Cards</CustomButton>
+                    </ButtonGroup>
+                    <Card.Text>Score: {score}</Card.Text>
+                    <Card.Text>Tiempo: {time}</Card.Text>
+                  </>
+                )}
+              </Card.Body>
+            </Card>
+          </Col>
+        </Container>
+      </Row>
+    </Container>
   )
 }

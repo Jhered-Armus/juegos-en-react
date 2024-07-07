@@ -1,12 +1,15 @@
 import React from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import { FOURTH_COLOR, PRIMARY_COLOR } from '../style/colors'
+import logo from '../assets/logo_horizontal.png'
 
 export function Navega () {
   return (
     <Navbar style={{ background: PRIMARY_COLOR }} expand='lg'>
       <Container>
-        <Navbar.Brand style={{ color: FOURTH_COLOR }} href='/'>Games</Navbar.Brand>
+        <Navbar.Brand style={{ color: FOURTH_COLOR }} href='/'>
+          <img style={{ width: '100px' }} src={logo} alt='logo' />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='me-auto'>

@@ -5,7 +5,7 @@ import { MOVE, imgButton } from '../utils/CONST_GAME.JS'
 import { Card, Col, Container, Row } from 'react-bootstrap'
 import { RenderGrid } from '../components/snake/GameRenderSnake'
 import { CustomButton } from '../components/Button'
-import { PRIMARY_COLOR, SECONDARY_COLOR } from '../style/colors'
+import { PRIMARY_COLOR } from '../style/colors'
 import styleSnanke from '../style/snake'
 export function GameSnake () {
   const [grid, setGrid] = useState(createGrid())
@@ -99,7 +99,7 @@ export function GameSnake () {
     }
   }, [])
   return (
-    <main style={{ background: SECONDARY_COLOR }}>
+    <div className='flex-grow-1'>
       {isSmallScreen ? (
         <Container className='text-center'>
           <h1 style={{ color: PRIMARY_COLOR, marginBottom: '16px' }}>
@@ -153,6 +153,6 @@ export function GameSnake () {
           </Row>
         </Container>
       )}
-    </main>
+    </div>
   )
 }

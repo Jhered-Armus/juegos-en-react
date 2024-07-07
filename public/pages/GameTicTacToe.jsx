@@ -5,7 +5,7 @@ import { saveGameTicTacToe } from '../utils/storage/localStorage_TicTacToe'
 import { Square } from '../components/tic-tac-toe/Square'
 import { Col, Container, Row } from 'react-bootstrap'
 import { WinnerModal } from '../components/tic-tac-toe/WinnerModal'
-import { PRIMARY_COLOR, SECONDARY_COLOR } from '../style/colors'
+import { PRIMARY_COLOR } from '../style/colors'
 import { CustomButton } from '../components/Button'
 
 export function TicTacToe () {
@@ -60,50 +60,48 @@ export function TicTacToe () {
   }
 
   return (
-    <main style={{ textAlign: 'center', background: SECONDARY_COLOR, marginTop: '16px' }}>
-      <Container>
-        <Row className='mb-3'>
-          <Col>
-            <h1 style={{ color: PRIMARY_COLOR, marginBottom: '16px' }}>Tic Tac Toe</h1>
-          </Col>
-        </Row>
-        <Row className='mb-3'>
-          <Col className=' d-flex justify-content-center'>
-            <CustomButton onClick={resetGame}>
-              Reset Game
-            </CustomButton>
-          </Col>
-        </Row>
-        <Row className='mb-3'>
-          {/* <Col><h3>Ganador de la partida anterior: {winnerFromStorage ?? '-'}</h3></Col> */}
-        </Row>
-        <Row className='mb-3'>
-          <Col>
-            <Container className='d-grid bg-gray' style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', maxWidth: '300px', margin: '0 auto' }}>
-              {board.map((square, index) => (
-                <Square
-                  key={index}
-                  index={index}
-                  updateBoard={updateBoard}
-                >
-                  {square}
-                </Square>
-              ))}
-            </Container>
-          </Col>
-        </Row>
-        <Row className='mb-3'>
-          <Col className='d-flex justify-content-center gap-3'>
-            <Square isSelected={turn === TURNS.x}>{TURNS.x}</Square>
-            <Square isSelected={turn === TURNS.o}>{TURNS.o}</Square>
-          </Col>
-        </Row>
-        <Row className='mb-3'>
-          <Col>
-            <WinnerModal resetGame={resetGame} winner={winner} />
-          </Col>
-        </Row>
-      </Container>
-    </main>
+    <Container className='flex-grow-1 text-center'>
+      <Row className='mb-3'>
+        <Col>
+          <h1 style={{ color: PRIMARY_COLOR, marginBottom: '16px' }}>Tic Tac Toe</h1>
+        </Col>
+      </Row>
+      <Row className='mb-3'>
+        <Col className=' d-flex justify-content-center'>
+          <CustomButton onClick={resetGame}>
+            Reset Game
+          </CustomButton>
+        </Col>
+      </Row>
+      <Row className='mb-3'>
+        {/* <Col><h3>Ganador de la partida anterior: {winnerFromStorage ?? '-'}</h3></Col> */}
+      </Row>
+      <Row className='mb-3'>
+        <Col>
+          <Container className='d-grid bg-gray' style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', maxWidth: '300px', margin: '0 auto' }}>
+            {board.map((square, index) => (
+              <Square
+                key={index}
+                index={index}
+                updateBoard={updateBoard}
+              >
+                {square}
+              </Square>
+            ))}
+          </Container>
+        </Col>
+      </Row>
+      <Row className='mb-3'>
+        <Col className='d-flex justify-content-center gap-3'>
+          <Square isSelected={turn === TURNS.x}>{TURNS.x}</Square>
+          <Square isSelected={turn === TURNS.o}>{TURNS.o}</Square>
+        </Col>
+      </Row>
+      <Row className='mb-3'>
+        <Col>
+          <WinnerModal resetGame={resetGame} winner={winner} />
+        </Col>
+      </Row>
+    </Container>
   )
 }
