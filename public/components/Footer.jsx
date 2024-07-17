@@ -13,9 +13,7 @@ export function Footer () {
     <footer className='text-white mt-5' style={{ background: PRIMARY_COLOR }}>
       <Container fluid className='p-4'>
         <Row>
-          <Col md={6} className='mb-3 mb-md-0'>
-            <h5>Acerca de mi</h5>
-            <p>Soy un programador junior apasionado por la tecnología y siempre buscando nuevos desafíos</p>
+          <Col md={6} className='mb-3 mb-md-0 d-flex align-items-center'>
             <p>
               Este proyecto está hecho con <a href='https://reactjs.org/' target='_blank' rel='noopener noreferrer' style={{ textDecoration: 'none', color: 'white' }}>React</a> y <a href='https://getbootstrap.com/' target='_blank' rel='noopener noreferrer' style={{ textDecoration: 'none', color: 'white' }}>Bootstrap</a>.
             </p>
