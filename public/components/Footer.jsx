@@ -33,7 +33,7 @@ export function Footer () {
         </Row>
       </Container>
       <Container fluid className='p-2' style={{ background: THIRD_COLOR }}>
-        <p className='text-center mb-0'>©2023</p>
+        <p className='text-center mb-0'>©2024</p>
       </Container>
     </footer>
   )
