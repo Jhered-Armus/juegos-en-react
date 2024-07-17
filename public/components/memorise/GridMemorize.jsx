@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Alert, Button, Card, Col, Container, Row } from 'react-bootstrap'
 
-export function GridMemorize ({ cards, setScore, score, setTime, time, pause }) {
+export function GridMemorize ({ cards, setScore, score, setTime, time, pause, setDisableButton, setPause }) {
   const [flipped, setFlipped] = useState([])
   const [isFlipped, setIsFlepped] = useState([])
   const [isWinner, setIsWinner] = useState(false)
@@ -47,9 +47,12 @@ export function GridMemorize ({ cards, setScore, score, setTime, time, pause }) 
   useEffect(() => {
     winner()
   }, [score])
+
   function winner () {
     if (score === cards.length / 2) {
       setIsWinner(true)
+      setDisableButton(true)
+      setPause(true)
     }
   }
   return (
@@ -57,7 +60,7 @@ export function GridMemorize ({ cards, setScore, score, setTime, time, pause }) 
       <Row>
         {cards.map((card) => (
           <Col key={card.id} className='col-3'>
-            <Card onClick={() => !pause && !isOver && handlerClickCard(card)} style={{ textAlign: 'center' }}>
+            <Card onClick={() => !pause && !isOver && !isWinner && handlerClickCard(card)} style={{ textAlign: 'center' }}>
               <Card.Body>{card.isFlipped ? card.value : '?'}</Card.Body>
             </Card>
           </Col>

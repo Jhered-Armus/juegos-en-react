@@ -13,6 +13,7 @@ export function GameMemorize () {
   const [time, setTime] = useState(15)
   const timerRef = useRef(null)
   const [pause, setPause] = useState(false)
+  const [diasableBUtton, setDisableButton] = useState(false)
 
   useEffect(() => {
     suffleCards(generateCard(boardSize))
@@ -68,13 +69,14 @@ export function GameMemorize () {
   function reshuffle () {
     suffleCards()
     setScore(0)
+    setDisableButton(false)
     if (boardSize === 8) setTime(15)
     if (boardSize === 16) setTime(30)
     if (boardSize === 32) setTime(40)
   }
   return (
     <Container className='flex-grow-1'>
-      <h1 style={{ textAlign: 'center' }}>Memorize</h1>
+      <h1 style={{ textAlign: 'center' }}>Memorama</h1>
       <Row>
         <Container className='d-flex row-2 gap-1 justify-content-center flex-wrap'>
           <Col md={8}>
@@ -83,25 +85,28 @@ export function GameMemorize () {
                   cards={cards} setScore={setScore}
                   score={score} setTime={setTime}
                   time={time} pause={pause}
+                  setDisableButton={setDisableButton}
+                  setPause={setPause}
                  />)
               : null}
           </Col>
           <Col className='d-flex justify-content-center'>
-            <Card className='text-center' style={{ width: '18rem', maxHeight: '280PX' }}>
+            <Card className='text-center' style={{ width: '100%', maxHeight: '300PX' }}>
               <Card.Body>
-                <Card.Title>Memorize</Card.Title>
+                <Card.Title>Memorama</Card.Title>
                 <Card.Body>
                   {play
                     ? (
                       <div className=' d-flex row-2 gap-1 justify-content-center'>
                         <CustomButton
+                          disabled={diasableBUtton}
                           onClick={handlerPause}
                           icon={pause ? imgButton.pause : imgButton.play}
                           variant='secondary'
                         >
                           {pause ? 'Continuar' : 'Pausar'}
                         </CustomButton>
-                        <Button onClick={() => reshuffle(8)} variant='secondary'>
+                        <Button onClick={() => reshuffle()} variant='secondary'>
                           Volver a barajar
                         </Button>
                       </div>

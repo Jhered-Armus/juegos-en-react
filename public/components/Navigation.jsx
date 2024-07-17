@@ -16,7 +16,7 @@ export function Navega () {
             <Nav.Link style={{ color: FOURTH_COLOR }} href='tic-tac-toe'>Tic Tac Toe</Nav.Link>
             <Nav.Link style={{ color: FOURTH_COLOR }} href='ahorcado'>Ahorcado</Nav.Link>
             <Nav.Link style={{ color: FOURTH_COLOR }} href='snake'>Snake</Nav.Link>
-            <Nav.Link style={{ color: FOURTH_COLOR }} href='memorise'>Memorise</Nav.Link>
+            <Nav.Link style={{ color: FOURTH_COLOR }} href='memorise'>Memorama</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
