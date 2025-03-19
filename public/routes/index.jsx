@@ -5,6 +5,7 @@ import { TicTacToe } from '../pages/GameTicTacToe'
 import { GameAhorcado } from '../pages/GameAhorcado'
 import { GameSnake } from '../pages/GameSnake'
 import { GameMemorize } from '../pages/GameMemorize'
+
 export function RoutesPage () {
   return (
     <BrowserRouter>
