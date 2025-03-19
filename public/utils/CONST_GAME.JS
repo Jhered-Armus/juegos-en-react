@@ -37,7 +37,7 @@ export const games = [
     name: 'Tic Tac Toe',
     description: 'Clásico juego de mesa donde dos jugadores compiten por colocar tres fichas en línea.',
     image: '../assets/img/img_game_tictactoe.JPG',
-    path: '/tictactoe'
+    path: '/tic-tac-toe'
   },
   {
     name: 'Ahorcado',
